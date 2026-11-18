@@ -16,13 +16,20 @@ model accuracy and prediction speed.
 - Visualizes results with bar charts and confusion matrices
 
 ## 🔍 Key Findings
-- Increasing training data from 50% → 70% improved accuracy.
-- Training Split,Accuracy,Prediction Time (s)
-50%,0.6412,0.4102
-70%,0.6705,0.2481
-- The model most frequently confuses
-  consistent with the ordinal nature of the target.
-- Prediction time is dominated by test-set size, not training-set size.
+| Training Split | Accuracy | Prediction Time |
+|----------------|----------|-----------------|
+| 50%            | 64.1%    | 0.046 s         |
+| 70%            | **68.2%**| 0.036 s         |
+
+- Increasing training data from 50% → 70% improved accuracy by 
+  **+4.0 percentage points** (64.1% → 68.2%).
+- Prediction time *decreased* at the 70% split — but only because the 
+  test set shrinks proportionally (3,248 → 1,949 rows). Per-row 
+  prediction cost stays roughly constant, so this is a split-size 
+  artifact, not a model-speed improvement.
+- Confusion matrices show the model's errors concentrate in **adjacent 
+  quality classes** (5↔6, 6↔7), consistent with the ordinal nature of 
+  the target variable and the dataset's class imbalance.
 
 ## 🛠️ Tech Stack
 Python · pandas · scikit-learn · matplotlib · seaborn

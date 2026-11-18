@@ -37,3 +37,14 @@ Python · pandas · scikit-learn · matplotlib · seaborn
 - Address class imbalance with `class_weight='balanced'`
 - Hyperparameter tuning via `GridSearchCV`
 - Compare against baseline models (Logistic Regression, Gradient Boosting)
+
+
+  wine-quality-classifier/
+├── README.md
+├── requirements.txt
+├── .gitignore
+├── wine_quality_analysis.py       ← rename your .py file
+├── data/
+│   └── winequalityN.csv
+└── results/
+    └── wine_quality_prediction_results.csv
